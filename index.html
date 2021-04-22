@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>popular chat</title>
+    <link rel="shortcut icon" href="/public/img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/public/css/normalize.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/scroll.css">
+  </head>
+  <body>
+    <div id="main">
+      <div id="left">
+        <h2>User name <span>:<b>5</b></span></h2>
+        <ul>
+          <li class="trans" v-for="name in userall">{{ name }} <span id="like">
+                                                <q v-on:click="likeFun"><img src="/public/img/like.png" alt=""></q>
+                                                <qa>{{ like }}</qa>
+                                                <w v-on:click=" dislikeFun"><img src="/public/img/dislike.png" alt=""></w>
+                                                <wa>{{ dislike }}</wa>
+                                              </span>
+                                            </li>
+        </ul>
+      </div>
+
+      <div id="right">
+        <h1>Message</h1>
+        <ul id="ulId">
+          <li v-for="mess in messall" v-html="mess">{{ mess }}</li>
+        </ul>
+      </div>
+      <div id="form">
+        <input type="text" id="user" placeholder="name" class="shadowB" :disabled="cls" v-model="user" v-on:keyup.enter="send">
+        <input type="text" id="message" placeholder="message" class="shadowB" v-model="message" v-on:keyup.enter="send">
+        <img src="/public/img/15537.png" alt="send" class="shadowB" v-on:click="send">
+      </div>
+    </div>
+
+    <!-- // script -->
+    <script>
+      setInterval(() => {
+      let elem = document.getElementById('ulId');
+      elem.scrollTo(0,elem.scrollHeight)
+      }, 1000);
+    </script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/public/js/app.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,172 @@
+body
+    {
+    background: rgb(20, 19, 19);
+    color: blanchedalmond;
+    font-size: 26px;
+    }
+img
+    {
+    width: 32px;
+    height: 32px; 
+    display: inline;
+    }
+b{color: brown;}
+/* start left conteainer config */
+#left
+    {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    min-height: 150px;
+    }
+#left h2 
+    {
+    height: 45px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    background: rgb(51, 49, 49);
+    color: rgba(255, 255, 255, 0.473);
+    border-radius: 0 0 8px 8px;
+    }
+#left ul
+    {
+    overflow-y: scroll;
+    }
+#left ul li:hover
+    {
+    padding: 0 0 0 10%;
+    color: tomato;
+    }
+/* end left container config */
+/* start right conteainer config */
+#right
+    {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 80%;
+    }
+
+#right h1
+    {
+    margin: 0;
+    text-align: center;
+    background: rgb(51, 49, 49);
+    color: rgba(255, 255, 255, 0.473);
+    border-radius: 0 0 8px 8px;
+    height: 45px;
+    font-weight: 900;
+    font-size: 35px;
+    }
+#right ul
+    {
+    margin: 0;
+    height: 500px;
+    overflow-y: auto !important;
+    }
+#right li
+    {
+    color: blanchedalmond;
+    }
+#form
+    {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1%;
+    height: 50px;
+    width: 100%;
+    background: rgb(29, 26, 26);
+    border-radius: 8px 0 8px 8px;
+    }
+/* form style */
+#form #user
+    {
+    position: absolute;
+    left: 1%;
+    bottom: 8%;
+    background: rgb(59, 53, 53);
+    width: 20%;
+    height: 36px;
+    border: 0;
+    border-radius: 5px;
+    }
+
+#form #message
+    {
+    position: absolute;
+    left: 22%;
+    bottom: 8%;
+    background: rgb(59, 53, 53);
+    width: 70%;
+    height: 36px;
+    border: 0;
+    border-radius: 5px;
+    }
+#form img
+    {
+    position: absolute;
+    left: 93%;
+    bottom: 14%;
+    background: rgb(116, 100, 100);
+    border-radius: 6px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: inline;
+    }
+#form img:hover
+    {
+    box-shadow:0 0 10px rgb(0, 162, 255);
+    -moz-box-shadow:0 0 10px rgb(0, 162, 255);
+    -webkit-box-shadow:0 0 10px rgb(0, 162, 255);
+    -o-box-shadow:0 0 10px rgb(0, 162, 255);
+    -ms-box-shadow:0 0 10px rgb(0, 162, 255);
+    }
+#form img:active
+    {
+    box-shadow:0 0 10px rgb(162, 0, 255);
+    -moz-box-shadow:0 0 10px rgb(162, 0, 255);
+    -webkit-box-shadow:0 0 10px rgb(162, 0, 255);
+    -o-box-shadow:0 0 10px rgb(162, 0, 255);
+    -ms-box-shadow:0 0 10px rgb(162, 0, 255);
+    }
+/* style like deslike */
+#like
+    {
+    font-size: 18px;
+    float: right;
+    margin: 0 2% 0 0;
+    }
+#like q,w
+    {
+    cursor: pointer;
+    }
+#like q:hover,w:hover
+    {
+    text-shadow: 0px 0px 9px rgb(255, 217, 2);
+    -moz-text-shadow: 0px 0px 9px rgb(255, 217, 2);
+    -webkit-text-shadow: 0px 0px 9px rgb(255, 217, 2);
+    -o-text-shadow: 0px 0px 9px rgb(255, 217, 2);
+    -ms-text-shadow: 0px 0px 9px rgb(255, 217, 2);
+    }
+/* end like */
+
+.shadowB
+    {
+    box-shadow:0 0 8px rgb(0, 255, 242);
+    -moz-box-shadow:0 0 8px rgb(0, 255, 242);
+    -webkit-box-shadow:0 0 8px rgb(0, 255, 242);
+    -o-box-shadow:0 0 8px rgb(0, 255, 242);
+    -ms-box-shadow:0 0 8px rgb(0, 255, 242);
+    }
+.trans
+    {
+    transition: 1s;
+    -moz-transition: 1s;
+    -webkit-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    }
