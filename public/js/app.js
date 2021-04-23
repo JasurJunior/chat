@@ -11,33 +11,17 @@ const app = Vue.createApp(
             message:'',
             userall:[], // all user name
             messall:[], // all message
-            cls:false,
-            // like
-            like: 0,
-            dislike:0
-            //end like
+            cls:'display:block',
             }
         },
     methods:
         {
-        //like
-        likeFun()
-            {
-            if(this.like == 0) this.like++
-            else this.like--
-            },
-        dislikeFun()
-            {
-            if(this.dislike == 0) this.dislike++
-            else this.dislike--
-            },
-        // end like
         send()
             {
-            if(this.userall.indexOf(this.user) === -1 && this.user.length > 3)
+            if(this.userall.indexOf(this.user) === -1 && this.user.length > 1)
                 {
                 this.userall.push(this.user)
-                this.cls = true
+                this.cls = 'display:none'
 
                 socket.emit('user', this.user)
                 socket.on('user',msg=>
