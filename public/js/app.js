@@ -1,7 +1,6 @@
 // socket
 const socket = io()
 
-
 // vue3.js
 const app = Vue.createApp(
     {
@@ -39,6 +38,7 @@ const app = Vue.createApp(
                 {
                 this.userall.push(this.user)
                 this.cls = true
+
                 socket.emit('user', this.user)
                 socket.on('user',msg=>
                     {
@@ -55,7 +55,7 @@ const app = Vue.createApp(
                     })
                 }
 
-            if(this.messall.length > 10)
+            if(this.messall.length > 3)
                 this.messall.shift()
             }
         },

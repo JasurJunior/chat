@@ -17,7 +17,7 @@ let userId = []
 let mes = []
 io.on('connection', (socket)=>
     {
-    userId.push(socket.id)
+    userId.push(socket)
     socket.on('user', msg =>
         {
         users.push(msg)
@@ -33,7 +33,7 @@ io.on('connection', (socket)=>
 
     socket.on('disconnect',()=>
         {
-        let idx = userId.indexOf(socket.id)
+        let idx = userId.indexOf(socket)
         users.splice(idx,1)
         io.emit('user',users)
         })

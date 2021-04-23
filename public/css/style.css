@@ -10,6 +10,12 @@ img
     height: 32px; 
     display: inline;
     }
+mark
+    {
+    border-radius: 55px;
+    font-size: 16px;
+    padding: 0.5%;
+    }
 b{color: brown;}
 /* start left conteainer config */
 #left

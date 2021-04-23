@@ -10,15 +10,9 @@
   <body>
     <div id="main">
       <div id="left">
-        <h2>User name <span>:<b>5</b></span></h2>
+        <h2>User name</h2>
         <ul>
-          <li class="trans" v-for="name in userall">{{ name }} <span id="like">
-                                                <q v-on:click="likeFun"><img src="/public/img/like.png" alt=""></q>
-                                                <qa>{{ like }}</qa>
-                                                <w v-on:click=" dislikeFun"><img src="/public/img/dislike.png" alt=""></w>
-                                                <wa>{{ dislike }}</wa>
-                                              </span>
-                                            </li>
+          <li class="trans" v-for="name in userall"> >> {{ name }}</li>
         </ul>
       </div>
 
