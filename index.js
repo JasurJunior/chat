@@ -28,6 +28,8 @@ io.on('connection', (socket)=>
         {
         let date = new Date().toLocaleTimeString()
         mes.unshift(`<b>${msg.user}</b>: ${msg.message}          <mark>${date}</mark>`)
+        if(mes.length > 20)
+            mes.pop()
         io.emit('message',mes)
         })
 
