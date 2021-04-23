@@ -12,26 +12,30 @@ const app = Vue.createApp(
             userall:[], // all user name
             messall:[], // all message
             cls:'display:block',
+            color: '',
             }
         },
     methods:
         {
         send()
             {
-            if(this.userall.indexOf(this.user) === -1 && this.user.length > 1)
+            if(this.user.length > 1)
                 {
                 this.userall.unshift(this.user)
                 this.cls = 'display:none'
 
-                socket.emit('user', this.user)
+                socket.emit('user', {user:this.user,color:this.color})
                 socket.on('user',msg=>
                     {
                     this.userall = msg
                     })
                 }
+            },
+        sendMes()
+            {
             if(this.message.length > 0)
                 {
-                socket.emit('message',{user:this.user,message:this.message})
+                socket.emit('message',{user:this.user,message:this.message,color:this.color})
                 socket.on('message',msg=>
                     {
                     this.messall = msg
@@ -41,7 +45,7 @@ const app = Vue.createApp(
 
             if(this.messall.length > 3)
                 this.messall.shift()
-            }
+            },
         },
     })
 app.mount('#main')

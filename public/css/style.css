@@ -91,12 +91,8 @@ b{color: brown;}
 /* form style */
 #form #user
     {
-    position: absolute;
-    left: 40%;
-    top: 40%;
     background: rgb(59, 53, 53);
-    width: 20%;
-    height: 36px;
+    margin: 10% 0 0 0;
     border: 0;
     border-radius: 5px;
     }
@@ -179,21 +175,15 @@ b{color: brown;}
     }
 #come
     {
-    background:#999;
+    background:rgb(41, 40, 40);
     position: fixed;
     top: 0;
     left: 0;
+    padding: 0 0 0 40%;
     width: 100%;
     height: 100%;
     display: block;
     z-index: 55;
-    }
-#come h1,h5
-    {
-    display: inline;
-    position: relative;
-    top: 10%;
-    left: 40%;
     }
 #ulId li:first-child::after
     {
@@ -212,4 +202,10 @@ b{color: brown;}
     background-repeat: no-repeat;
     background-size: 32px 32px;
     content: "";
+    }
+#color
+    {
+    width: 200px;
+    height: 40px;
+    border: none;
     }

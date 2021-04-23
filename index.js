@@ -20,14 +20,14 @@ io.on('connection', (socket)=>
     userId.push(socket)
     socket.on('user', msg =>
         {
-        users.push(msg)
+        users.push(`<b style="color:${msg.color}">${msg.user}</b>`)
         io.emit('user',users)
         })
     
     socket.on('message', msg =>
         {
         let date = new Date().toLocaleTimeString()
-        mes.unshift(`<b>${msg.user}</b>: ${msg.message}          <mark>${date}</mark>`)
+        mes.unshift(`<b style="color:${msg.color}">${msg.user}</b>: ${msg.message}          <mark>${date}</mark>`)
         if(mes.length > 20)
             mes.pop()
         io.emit('message',mes)
