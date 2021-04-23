@@ -12,7 +12,7 @@
       <div id="left">
         <h2>User name</h2>
         <ul>
-          <li class="trans" v-for="name in userall">o={==> {{ name }}</li>
+          <li class="trans" v-for="name in userall"> {{ name }}</li>
         </ul>
       </div>
 
@@ -34,12 +34,12 @@
     </div>
 
     <!-- // script -->
-    <script>
+    <!-- <script>
       setInterval(() => {
       let elem = document.getElementById('ulId');
       elem.scrollTo(0,elem.scrollHeight)
       }, 1000);
-    </script>
+    </script> -->
     <script src="https://unpkg.com/vue@next"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/public/js/app.js"></script>

@@ -27,7 +27,7 @@ io.on('connection', (socket)=>
     socket.on('message', msg =>
         {
         let date = new Date().toLocaleTimeString()
-        mes.push(`<b>${msg.user}</b>:${msg.message}          <mark>${date}</mark>`)
+        mes.unshift(`<b>${msg.user}</b>: ${msg.message}          <mark>${date}</mark>`)
         io.emit('message',mes)
         })
 

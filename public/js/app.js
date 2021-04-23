@@ -20,7 +20,7 @@ const app = Vue.createApp(
             {
             if(this.userall.indexOf(this.user) === -1 && this.user.length > 1)
                 {
-                this.userall.push(this.user)
+                this.userall.unshift(this.user)
                 this.cls = 'display:none'
 
                 socket.emit('user', this.user)

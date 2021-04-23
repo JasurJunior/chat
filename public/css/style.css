@@ -13,9 +13,9 @@ img
     }
 mark
     {
-    border-radius: 55px;
-    font-size: 16px;
-    padding: 0.5%;
+    background:none;
+    font-size: 12px;
+    color: cadetblue;
     }
 b{color: brown;}
 /* start left conteainer config */
@@ -194,4 +194,22 @@ b{color: brown;}
     position: relative;
     top: 10%;
     left: 40%;
+    }
+#ulId li:first-child::after
+    {
+    margin: 0 0 0 1%;
+    padding: 3px 4px 0px 27px;
+    background: url(/public/img/new.png);
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    content: "";
+    }
+#left li::before
+    {
+    margin: 0 0 0 1%;
+    padding: 3px 4px 0px 27px;
+    background: url(/public/img/man.png);
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    content: "";
     }
