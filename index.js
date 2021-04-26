@@ -12,15 +12,14 @@ app.get('/', (req, res) =>
     res.sendFile(__dirname + '/index.html')
     })
 
-let users = []
-let userId = []
+let users = {}
 let mes = []
 io.on('connection', (socket)=>
     {
-    userId.push(socket)
     socket.on('user', msg =>
         {
-        users.push(`<b style="color:${msg.color}">${msg.user}</b>`)
+        mes.unshift(`<b style="color:green; font-size: 15px">________<b style="color:${msg.color}">${msg.user}</b>: connected________</b>`)
+        users[socket.id] = `<b style="color:${msg.color}">${msg.user}</b>`
         io.emit('user',users)
         })
     
@@ -35,10 +34,10 @@ io.on('connection', (socket)=>
 
     socket.on('disconnect',()=>
         {
-        let idx = userId.indexOf(socket)
-        users.splice(idx,1)
+        mes.unshift(`<b style="color:red; font-size: 15px">________${users[socket.id]}: disconnected________</b>`)
+        delete users[socket.id]
         io.emit('user',users)
         })
     })
 
-server.listen(3000,'0.0.0.0', () => console.log('http://0.0.0.0:3000'))
+server.listen(3001,'0.0.0.0', () => console.log('http://0.0.0.0:3001'))

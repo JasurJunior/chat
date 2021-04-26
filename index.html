@@ -24,11 +24,12 @@
       </div>
       <div id="form">
         <div id="come" :style="cls">
-          <p>this site is for online chat</p>
-          <p>please enter your name and <b>press 'enter'</b></p>
-          <input type="text" id="user" placeholder="name" class="shadowB" v-model="user" v-on:keyup.enter="send"><br>
-          <p>and choose your color:</p>
-          <input type="color" id="color" v-model="color">
+          <p>This site is for online chat</p><br><br>
+          <ul>
+            <li><b>1: choose your color</b><br><input type="color" id="color" v-model="color" value="#f6b73c"></li>
+            <li><b>2: Your nikname</b><br><input type="text" id="user" placeholder="name" class="shadowB" v-model="user" v-on:keyup.enter="send"></li>
+            <li>end press <b>ENTER</b></li>
+          </ul>     
         </div>
         <input type="text" id="message" placeholder="message" class="shadowB" v-model="message" v-on:keyup.enter="sendMes">
         <img src="/public/img/15537.png" alt="send" class="shadowB" v-on:click="sendMes">
@@ -37,10 +38,8 @@
 
     <!-- // script -->
     <!-- <script>
-      setInterval(() => {
       let elem = document.getElementById('ulId');
-      elem.scrollTo(0,elem.scrollHeight)
-      }, 1000);
+      container.scrollTop = container.scrollHeight;
     </script> -->
     <script src="https://unpkg.com/vue@next"></script>
     <script src="/socket.io/socket.io.js"></script>

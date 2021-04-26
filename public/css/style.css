@@ -70,7 +70,6 @@ b{color: brown;}
 #right ul
     {
     margin: 0;
-    height: 500px;
     overflow-y: auto !important;
     }
 #right li
@@ -92,7 +91,7 @@ b{color: brown;}
 #form #user
     {
     background: rgb(59, 53, 53);
-    margin: 10% 0 0 0;
+    margin: 0;
     border: 0;
     border-radius: 5px;
     }
@@ -208,4 +207,18 @@ b{color: brown;}
     width: 200px;
     height: 40px;
     border: none;
+    }
+#right li
+    {
+    width: fit-content;
+    padding: 0 1%;
+    font-size: 21px;
+    margin: 1% 0 1% 1%;
+    background: rgb(0 0 0);
+    border-radius: 5px;
+    box-shadow: -3px 5px 9px 0px rgb(17 129 156);
+    -moz-box-shadow: -3px 5px 9px 0px rgb(17 129 156);
+    -webkit-box-shadow: -3px 5px 9px 0px rgb(17 129 156);
+    -o-box-shadow: -3px 5px 9px 0px rgb(17 129 156);
+    -ms-box-shadow: -3px 5px 9px 0px rgb(17 129 156);
     }

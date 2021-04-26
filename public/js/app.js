@@ -21,13 +21,13 @@ const app = Vue.createApp(
             {
             if(this.user.length > 1)
                 {
-                this.userall.unshift(this.user)
                 this.cls = 'display:none'
 
                 socket.emit('user', {user:this.user,color:this.color})
                 socket.on('user',msg=>
                     {
-                    this.userall = msg
+                    this.userall = Object.values(msg)
+                    console.log(this.userall)
                     })
                 }
             },
