@@ -26,7 +26,13 @@ io.on('connection', (socket)=>
     
     socket.on('message', msg =>
         {
-        let date = new Date().toLocaleTimeString()
+        // local date hosting
+        const n = 5 // this is the difference in hosting hours
+        let hour = new Date().getHours() + n > 10 ? new Date().getHours()+n : '0'+(new Date().getHours()+n)
+        let minute = new Date().getMinutes() > 10 ? new Date().getMinutes() : '0'+new Date().getMinutes()
+        let second = new Date().getSeconds() > 10 ? new Date().getSeconds() : '0'+new Date().getSeconds()
+        let date = `${hour}:${minute}:${second}`
+        // end date
         mes.push(`<b style="color:${msg.color}">${msg.user}</b>: ${msg.message}          <mark>${date}</mark>`)
         if(mes.length > 10)
             mes.shift()
