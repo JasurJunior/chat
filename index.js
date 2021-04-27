@@ -18,7 +18,7 @@ io.on('connection', (socket)=>
     {
     socket.on('user', msg =>
         {
-        mes.unshift(`<b style="color:green; font-size: 15px">________<b style="color:${msg.color}">${msg.user}</b>: connected________</b>`)
+        mes.push(`<b style="color:green; font-size: 15px">________<b style="color:${msg.color}">${msg.user}</b>: connected________</b>`)
         users[socket.id] = `<b style="color:${msg.color}">${msg.user}</b>`
         io.emit('user',users)
         })
@@ -26,18 +26,19 @@ io.on('connection', (socket)=>
     socket.on('message', msg =>
         {
         let date = new Date().toLocaleTimeString()
-        mes.unshift(`<b style="color:${msg.color}">${msg.user}</b>: ${msg.message}          <mark>${date}</mark>`)
+        mes.push(`<b style="color:${msg.color}">${msg.user}</b>: ${msg.message}          <mark>${date}</mark>`)
         if(mes.length > 20)
-            mes.pop()
+            mes.shift()
         io.emit('message',mes)
         })
 
     socket.on('disconnect',()=>
         {
-        mes.unshift(`<b style="color:red; font-size: 15px">________${users[socket.id]}: disconnected________</b>`)
+        mes.push(`<b style="color:red; font-size: 15px">________${users[socket.id]}: disconnected________</b>`)
         delete users[socket.id]
         io.emit('user',users)
         })
     })
 
-server.listen(3001,'0.0.0.0', () => console.log('http://0.0.0.0:3001'))
+const port = process.env.port || 3000
+server.listen(port,'0.0.0.0', () => console.log('http://0.0.0.0:'+port))
