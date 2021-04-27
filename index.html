@@ -37,10 +37,12 @@
     </div>
 
     <!-- // script -->
-    <!-- <script>
+    <script>
       let elem = document.getElementById('ulId');
-      container.scrollTop = container.scrollHeight;
-    </script> -->
+      setInterval(() => {
+      window.scrollTo(0,elem.scrollHeight);
+      }, 1000);
+    </script>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/public/js/app.js"></script>
