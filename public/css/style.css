@@ -39,6 +39,7 @@ b{color: brown;}
     }
 #left ul
     {
+    overflow-x: hidden;
     overflow-y: scroll;
     }
 #left ul li:hover
