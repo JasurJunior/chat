@@ -21,13 +21,14 @@ io.on('connection', (socket)=>
         mes.push(`<b style="color:green; font-size: 15px">________<b style="color:${msg.color}">${msg.user}</b>: connected________</b>`)
         users[socket.id] = `<b style="color:${msg.color}">${msg.user}</b>`
         io.emit('user',users)
+        socket.on('message',()=> io.emit('message',mes) )
         })
     
     socket.on('message', msg =>
         {
         let date = new Date().toLocaleTimeString()
         mes.push(`<b style="color:${msg.color}">${msg.user}</b>: ${msg.message}          <mark>${date}</mark>`)
-        if(mes.length > 20)
+        if(mes.length > 10)
             mes.shift()
         io.emit('message',mes)
         })

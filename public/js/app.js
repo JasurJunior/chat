@@ -29,6 +29,12 @@ const app = Vue.createApp(
                     this.userall = Object.values(msg)
                     console.log(this.userall)
                     })
+                socket.emit('message',{user:this.user,message:this.message,color:this.color})
+                socket.on('message',msg=>
+                    {
+                    this.messall = msg
+                    this.message = ''
+                    })
                 }
             },
         sendMes()
